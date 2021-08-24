@@ -9,8 +9,8 @@
 <body>
   <div id="app">
     <label>名前: 
-      {% comment %} v-model.lazy にするとフォーカスが外れた時点でBindソースに反映する {% endcomment %}
-      {% comment %} <input type="text" v-model.lazy="name"/> {% endcomment %}
+      <!-- v-model.lazy にするとフォーカスが外れた時点でBINDソースに反映する -->
+      <!-- <input type="text" v-model.lazy="name"/> -->
       <input type="text" v-model="name"/>
     </label>
     <p>入力された値: {{ upperName }}</p>
