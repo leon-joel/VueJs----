@@ -2,7 +2,7 @@ new Vue({
     el: '#app',
     data: {
         name: '',
-        upperName: '',
+        // upperName: '',
     },
 
     created: function(){
@@ -11,10 +11,15 @@ new Vue({
         this.delayFunc = _.debounce(this.getUpper, 2000);
     },
 
-    watch: {
-        name: function(newValue, oldValue) {
-            // nameが変更されたら delayFunc を呼び出す
-            this.delayFunc();
+    // watch: {
+    //     name: function(newValue, oldValue) {
+    //         // nameが変更されたら delayFunc を呼び出す
+    //         this.delayFunc();
+    //     }
+    // },
+    computed: {
+        upperName: function () {
+            return this.name.toUpperCase();
         }
     },
 
