@@ -32,8 +32,7 @@
 			"",
 			"<body>",
 			"  <div id='app'>",
-			"    <div id='main'>",
-			"    </div>",
+			"    $0",
 			"  </div>",
 			"",
 			"  <script src='https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js'></script>",
@@ -41,7 +40,7 @@
 			"</body>",
 			"",
 			"</html>",
-			"$0",
+			"",
 		],
 		"description": "HTML with vue"
 	}

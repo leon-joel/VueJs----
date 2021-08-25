@@ -16,20 +16,21 @@
 	// 	"description": "Log output to console"
 	// }
 
-	"new Vue": {
+	"Vue Javascript skelton": {
 		"scope": "javascript,typescript",
-		"prefix": "vuenew",
+		"prefix": "vuejs",
 		"body": [
 			"new Vue({",
-			"    el: '#$1',",
+			"    el: '#${1:app}',",
 			"    data: {",
+			"      $0",
 			"    },",
 			"    created: function () {",
 			"    },",
 			"    methods: {",
 			"    }",
 			"});",
-			"$0"
+			""
 		],
 		"description": "new Vue (ver.2)"
 	}
