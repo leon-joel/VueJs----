@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bind Model Object</title>
+</head>
+
+<body>
+  <div id="app">
+    <form>
+      <label>
+        <input type="radio" v-model="unit" v-on:change="onChange"
+               v-bind:value="{ name: '百万', size: 1000000 }" />
+        百万
+      </label><br/>
+      <label>
+        <input type="radio" v-model="unit" v-on:change="onChange"
+               v-bind:value="{ name: '十億', size: 1000000000 }" />
+        十億
+      </label><br/>
+      <label>
+        <input type="radio" v-model="unit" v-on:change="onChange"
+               v-bind:value="{ name: '一兆', size: 1000000000000 }" />
+        一兆
+      </label><br/>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script src="./model_object.js"></script>
+</body>
+
+</html>
