@@ -675,3 +675,10 @@ MigrationBackup/
 .ionide/
 
 # End of https://www.toptal.com/developers/gitignore/api/django,windows,macos,visualstudio,visualstudiocode,sublimetext,python,venv
+
+
+
+# プロジェクト用スニペットはGit共有する
+!.vscode/*.code-snippets
+# ※上の方で .vscode/* がignoreされているので、↑これだけ除外する。
+#   ちなみに、仮に .vscode/ がignoreされていたら（*なし）、↑この方法では除外できない。
