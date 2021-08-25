@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Model Custom</title>
+</head>
+
+<body>
+  <div id='app'>
+    <label>メールアドレス:
+      <!-- 双方向バインディング: src⇔target 間でカスタム処理を入れている -->
+      <textarea cols="30" rows="5"
+                v-bind:value="mails.join(',')"
+                v-on:input="mails = $event.target.value.split(',')"></textarea>
+    </label>
+    <div>
+      <div v-for="mail in mails">
+        <span>{{ mail }}</span>
+      </div>
+    </div>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js'></script>
+  <script src='./model_custom.js'></script>
+</body>
+
+</html>
