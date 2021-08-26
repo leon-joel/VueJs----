@@ -13,10 +13,14 @@
   <div id='app'>
     <div id="parent" v-on:click="onParentClicked"
          style="background-color:aquamarine; width: 90%; height: 400px;">
-      <div id="my" v-on:click="onMyClicked"
+      <p>parent</p>
+      <!-- stopすると、parentに伝搬しなくなる -->
+      <div id="my" v-on:click.stop="onMyClicked"
            style="background-color:cadetblue; width: 90%; height: 60%;">
+        <p>my</p>
         <div id="child" v-on:click="onChildClicked"
-             style="background-color:darkblue; width: 90%; height: 60%;">
+             style="background-color:darkgray; width: 90%; height: 60%;">
+          <p>child</p>
         </div>
       </div>
     </div>
