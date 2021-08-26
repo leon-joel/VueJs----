@@ -6,14 +6,23 @@ new Vue({
     created: function () {
     },
     methods: {
-        onParentClicked: function (e) {
-            console.log("parent");
+        onParentClickedCapture: function (e) {
+            console.log("capture: parent");
         },
-        onMyClicked: function (e) {
-            console.log("my");
+        onMyClickedCapture: function (e) {
+            console.log("capture: my");
+        },
+        onChildClickedCapture: function (e) {
+            console.log("capture: child");
         },
         onChildClicked: function (e) {
-            console.log("child");
-        }
+            console.log("bubble : child");
+        },
+        onMyClicked: function (e) {
+            console.log("bubble : my");
+        },
+        onParentClicked: function (e) {
+            console.log("bubble : parent");
+        },
     }
 });

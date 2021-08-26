@@ -12,13 +12,19 @@
 <body>
   <div id='app'>
     <!-- capture修飾子: captureフェーズで処理する -->
-    <div id="parent" v-on:click.capture="onParentClicked"
+    <div id="parent"
+         v-on:click.capture="onParentClickedCapture"
+         v-on:click="onParentClicked"
          style="background-color:aquamarine; width: 90%; height: 400px;">
       <p>parent</p>
-      <div id="my" v-on:click.capture="onMyClicked"
+      <div id="my"
+           v-on:click.capture="onMyClickedCapture"
+           v-on:click="onMyClicked"
            style="background-color:cadetblue; width: 90%; height: 60%;">
         <p>my</p>
-        <div id="child" v-on:click.capture="onChildClicked"
+        <div id="child"
+             v-on:click.capture="onChildClickedCapture"
+             v-on:click="onChildClicked"
              style="background-color:darkgray; width: 90%; height: 60%;">
           <p>child</p>
         </div>
