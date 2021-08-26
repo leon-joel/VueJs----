@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>Event Propagation</title>
+  <link rel='stylesheet' href='./base.css'>
+</head>
+
+<body>
+  <div id='app'>
+    <div id="parent" v-on:click="onParentClicked"
+         style="background-color:aquamarine; width: 90%; height: 400px;">
+      <div id="my" v-on:click="onMyClicked"
+           style="background-color:cadetblue; width: 90%; height: 60%;">
+        <div id="child" v-on:click="onChildClicked"
+             style="background-color:darkblue; width: 90%; height: 60%;">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src='https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js'></script>
+  <script src='./event_propagation.js'></script>
+</body>
+
+</html>
