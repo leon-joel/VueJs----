@@ -14,8 +14,8 @@
     <div id="parent" v-on:click="onParentClicked"
          style="background-color:aquamarine; width: 90%; height: 400px;">
       <p>parent</p>
-      <!-- stopすると、parentに伝搬しなくなる -->
-      <div id="my" v-on:click.stop="onMyClicked"
+      <!-- self: 自分自身でのクリックにのみ反応する。childクリックは無視（スキップ）される -->
+      <div id="my" v-on:click.self="onMyClicked"
            style="background-color:cadetblue; width: 90%; height: 60%;">
         <p>my</p>
         <div id="child" v-on:click="onChildClicked"
