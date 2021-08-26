@@ -11,14 +11,14 @@
 
 <body>
   <div id='app'>
-    <div id="parent" v-on:click="onParentClicked"
+    <!-- capture修飾子: captureフェーズで処理する -->
+    <div id="parent" v-on:click.capture="onParentClicked"
          style="background-color:aquamarine; width: 90%; height: 400px;">
       <p>parent</p>
-      <!-- self: 自分自身でのクリックにのみ反応する。childクリックは無視（スキップ）される -->
-      <div id="my" v-on:click.self="onMyClicked"
+      <div id="my" v-on:click.capture="onMyClicked"
            style="background-color:cadetblue; width: 90%; height: 60%;">
         <p>my</p>
-        <div id="child" v-on:click="onChildClicked"
+        <div id="child" v-on:click.capture="onChildClicked"
              style="background-color:darkgray; width: 90%; height: 60%;">
           <p>child</p>
         </div>
