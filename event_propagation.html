@@ -11,24 +11,37 @@
 
 <body>
   <div id='app'>
-    <!-- capture修飾子: captureフェーズで処理する -->
     <div id="parent"
-         v-on:click.capture="onParentClickedCapture"
          v-on:click="onParentClicked"
          style="background-color:aquamarine; width: 90%; height: 400px;">
       <p>parent</p>
-      <div id="my"
-           v-on:click.capture="onMyClickedCapture"
-           v-on:click="onMyClicked"
-           style="background-color:cadetblue; width: 90%; height: 60%;">
+      <!-- stop.self: 子要素への伝搬はしない ＆ 自分自身のクリックにしか反応しない ★★★ここが違う！-->
+      <!--   childクリック: childしか発生しない -->
+      <!--   myクリック   ： myしか発生しない -->
+      <div id="my: stop.self"
+           v-on:click.stop.self="onMyClicked"
+           style="background-color:cadetblue; width: 40%; height: 60%; display: inline-block;">
         <p>my</p>
         <div id="child"
-             v-on:click.capture="onChildClickedCapture"
              v-on:click="onChildClicked"
              style="background-color:darkgray; width: 90%; height: 60%;">
           <p>child</p>
         </div>
       </div>
+      <!-- self.stop: 自分自身のクリックにしか反応しない ＆ 子要素への伝搬はしない -->
+      <!--   childクリック: child->parent が発生する ※myはスキップ ★★★ここが違う！-->
+      <!--   myクリック   ： myしか発生しない -->
+      <div id="my"
+           v-on:click.self.stop="onMyClicked"
+           style="background-color:cadetblue; width: 40%; height: 60%; display: inline-block;">
+        <p>my</p>
+        <div id="child"
+             v-on:click="onChildClicked"
+             style="background-color:darkgray; width: 90%; height: 60%;">
+          <p>child</p>
+        </div>
+      </div>
+
     </div>
   </div>
 
