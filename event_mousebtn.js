@@ -8,10 +8,12 @@ new Vue({
         }
     },
     created: function () {
+        // 親div要素の外側をクリックされたときにもメニューを消すため
+        window.addEventListener('click', this.hideMenu);
     },
     methods: {
-        onRightClick: function (e) {
-            console.log("onRightClick");
+        showMenu: function (e) {
+            console.log("showMenu");
             this.pos = {
                 top: e.pageY + 'px',
                 left: e.pageX + 'px',
@@ -19,8 +21,8 @@ new Vue({
             this.show_menu = true;
             console.log(`top: ${this.pos.top}, left: ${this.pos.left}`);
         },
-        onClick: function (e) {
-            console.log("onClick")
+        hideMenu: function (e) {
+            console.log("hideMenu")
             this.show_menu = false;
         }
     }

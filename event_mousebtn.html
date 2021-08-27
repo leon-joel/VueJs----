@@ -11,21 +11,25 @@
 </head>
 
 <body>
+  <!-- windowのclickイベントを拾うようにしたので、div要素のclickイベントでは何もしなくていい -->
+  <!-- <div id='app' v-on:click.left="hideMenu"> -->
   <div id='app'>
-    <div id="main"
-         v-on:click.right.prevent="onRightClick"
-         v-on:click.left="onClick">
+    <div id="main" 
+         v-on:click.right.prevent="showMenu">
       <p>右クリックで自前のコンテキストメニュー表示</p>
     </div>
 
-    <ul class="cxt" v-show="show_menu" v:bind:style="pos">
-      <li>ヘルプ</li>
+    <!-- v-showでfalseを渡しても初期表示時には一瞬見えてしまうので、v-cloakを入れている -->
+    <ul class="cxt" v-cloak v-show="show_menu" v-bind:style="pos">
+      <li><a href="#">ヘルプ</a></li>
       <li>掲示板</li>
       <li>よくある質問</li>
     </ul>
-  </div>
 
-  <script src='https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js'></script>
+
+  </div>
+  <!-- to use Vue.js DevTool in Chrome, load vue.js (not vue.min.js) -->
+  <script src='https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js'></script>
   <script src='./event_mousebtn.js'></script>
 </body>
 
